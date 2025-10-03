@@ -22,6 +22,3 @@ jobs:
         polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
         github_token: ${{ secrets.GITHUB_TOKEN }}
         polaris_assessment_types: "SCA,SAST"
-
-      env:
-        DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
