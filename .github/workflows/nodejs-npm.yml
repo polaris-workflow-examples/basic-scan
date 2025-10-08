@@ -1,10 +1,10 @@
-name: Basic Scan Example
+name: Polaris SAST and SCA Build Scan
                                                                                                                                                                                                                                          
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master, develop, stage, release ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, master, develop, stage, release ]
                                                                                                                                                                                                                                          
 jobs:
   polaris-scan:
@@ -14,8 +14,13 @@ jobs:
     
     - name: Checkout Source
       uses: actions/checkout@v4
+
+    - name: Build Project
+      run: |
+        cd nodejs-npm
+        npm instal
                                                                                                                                                                                                                                          
-    - name: Polaris Scan
+    - name: Polaris SAST and SCA Build Scan
       uses: blackduck-inc/black-duck-security-scan@v2
       with:
         polaris_server_url: ${{ vars.POLARIS_SERVER_URL }}
