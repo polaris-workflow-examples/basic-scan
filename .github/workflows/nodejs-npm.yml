@@ -28,3 +28,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         polaris_assessment_types: "SCA,SAST"
         detect_args: "--detect.source.path=${{ github.workspace }}/nodejs-npm"
+        
